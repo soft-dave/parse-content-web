@@ -1,0 +1,19 @@
+<div class="container">
+	<div class="container-fluid">
+		<div class="row">
+			<h2 align="center" style="margin-top: 50px;"><b>URL Form</b></h2>
+		</div>
+		<center style="padding-top: 70px;">
+			<%= form_for :page, :url => { :action => :create } do |f| %>
+				<div class="form-group">
+			    <%= f.text_field :page_url, :class => 'form-control', placeholder: "Enter Url Here", style: "margin-right: 7px;" %>
+			  </div> 
+				<div class="form-group">
+			    <%= f.submit "Submit", :class => "btn btn-primary", style: "margin-right: 7px;" %>
+
+			    <%= link_to 'Back', root_path, class: "btn btn-danger" %>
+			  </div>
+			<% end %>
+		</center>
+	</div>
+</div>

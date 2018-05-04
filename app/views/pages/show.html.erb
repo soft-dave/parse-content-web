@@ -1,0 +1,28 @@
+<div class="container">
+	<div class="container-fluid">
+		<div class="row">
+		  <h1 align="center" style="padding-top: 50px;">content listing</h1>
+		</div>		
+		<div style="padding-top: 30px;">
+			<%= link_to 'Back', root_path, class: "btn btn-danger" %><h2><%= @contents["page_url"] %></h2>
+			<table class="table table-hover">
+				<thead>
+				  <tr class="bg-primary">
+				    <th>Index</th>
+				    <th>Tag</th>
+				    <th>Content</th>
+				  </tr>
+				</thead>
+				<% @contents["page_contents"].each.with_index(1) do |value, index| %>
+					<tbody>
+				  	<tr align="center">
+				  		<td><%= index %></td>
+				    	<td><%= value["tag"] %></td>
+				 			<td><%= value["content"] %></td>
+				 		</tr>
+				  </tbody> 
+				<% end %>
+			</table>
+		</div>
+	</div>	
+</div>

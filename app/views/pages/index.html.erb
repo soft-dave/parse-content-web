@@ -1,0 +1,33 @@
+<div class="container">
+	<div class="container-fluid">
+		<div class="row">
+		  <h1 align="center" style="padding-top: 50px;">URL Listing</h1>
+		</div>
+		<div style="padding-top: 30px;">
+			<table class="table table-hover">
+				<thead>
+				  <tr class="bg-primary">
+				    <th>Index</th>
+				    <th>URL</th>
+				    <th>Action</th>
+				  </tr>
+				</thead>
+				<% @contents.each.with_index(1) do |content, index| %>
+					<tbody>
+				  	<tr align="center">
+				  		<td><%= index %></td>
+				    	<td><%= link_to content["page_url"], page_path(id: content["id"]) %></td>
+				    	<td><%= link_to 'Delete', page_path(id: content["id"]),
+                        method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+				 		</tr>
+				  </tbody>
+				<% end %>
+			</table>
+		</div>
+		<div class="row" style="padding-top: 30px;">
+	  	<%= link_to 'New Page Url', new_page_path, class: "btn btn-primary", style: "margin-left: 500px;" %>
+	  </div>
+	</div>	
+</div>
+
+
